@@ -31,7 +31,7 @@ def fetch_data_in_batches(batch_size=250, delay=40):
                 retrieved_tickers.append(ticker)
                 etf_data_dict[ticker] = df[['trade_date', 'open', 'close']]
         print(f"Fetched batch {i // batch_size + 1}/{(total_tickers // batch_size) + 1}")
-        time.sleep(delay)   # Wait 30 seconds
+        time.sleep(delay)   # Wait 40 seconds
     return etf_data_dict
 
 
@@ -42,7 +42,8 @@ def autocorrelation_filter(threshold):
         data = etf_dict[ticker]
         autocorr = data['close'].autocorr()
         if autocorr >= threshold:
-            # Find start & end date for each ETF, which are potentially different due to missing data
+            # Find start & end date for each ETF, which are potentially different from start_date or
+            # end_date due to missing data
             start_time = data['trade_date'][len(data) - 1]
             end_time = data['trade_date'][0]
 
