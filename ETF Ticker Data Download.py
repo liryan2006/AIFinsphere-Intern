@@ -17,7 +17,7 @@ def get_etf_tickers():
     screener.set_filter(filters_dict=filters_dict)
 
     # Retrieve the first 5 tickers
-    # etf_df = screener.screener_view(order='Ticker', limit=5, verbose=1, ascend=True)
+    # etf_df = screener.screener_view(order='Ticker', limit=3, verbose=1, ascend=True)
 
     # Retrive all tickers
     etf_df = screener.screener_view(order='Ticker', verbose=1, ascend=True)
