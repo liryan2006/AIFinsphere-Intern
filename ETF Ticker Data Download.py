@@ -16,7 +16,10 @@ def get_etf_tickers():
     filters_dict = {'Industry': 'Exchange Traded Fund'}  # Filter for ETFs
     screener.set_filter(filters_dict=filters_dict)
 
-    # Retrieve the tickers
+    # Retrieve the first 5 tickers
+    # etf_df = screener.screener_view(order='Ticker', limit=5, verbose=1, ascend=True)
+
+    # Retrive all tickers
     etf_df = screener.screener_view(order='Ticker', verbose=1, ascend=True)
     tickers = etf_df['Ticker'].tolist()
 
