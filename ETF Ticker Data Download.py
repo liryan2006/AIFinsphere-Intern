@@ -26,8 +26,8 @@ def get_etf_tickers():
 # Download ETF historical price data using Yahoo Finance API
 def download_etf_data(tickers, batch_size=2000, sleep_time=3600):
     # Set start and end date
-    end_date = '2024-06-20'
-    start_date = '2023-06-21'
+    end_date = '2024-06-18'
+    start_date = '2023-06-19'
 
     # Download data in batches to respect yFinance API rate limit of 2000 requests per hour
     for i in range(0, len(tickers), batch_size):
